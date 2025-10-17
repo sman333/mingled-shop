@@ -2,8 +2,8 @@
 
 require "razorpay/Razorpay.php";
 use Razorpay\Api\Api;
-$key_id = "rzp_live_PsOD0bRj0ZjJ3I";
-$secret = "VuNz0vb1MdvuuQ80coSxWAib";
+$key_id = "rzp_live_";
+$secret = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $respFlds = ["razorpay_payment_id", "razorpay_order_id", "razorpay_signature"];
@@ -199,4 +199,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
