@@ -1,0 +1,24 @@
+php_value session.auto_start 1
+php_value date.timezone "Asia/Calcutta"
+
+php_flag display_startup_errors off
+php_flag display_errors off
+
+Header unset Cookie
+Header unset Set-Cookie
+
+RewriteEngine On
+
+RewriteRule 		^Account/([0-9]*)/?$ 					/mingled/index.php?page=Account&odrId=$1 			[NC,L]
+RewriteRule     	^Checkout/([0-9]*)/?$                 /mingled/index.php?page=Checkout&odrId=$1 	    	[NC,L]
+RewriteRule 		^LogIn/?$ 								/mingled/index.php?page=SignIn&acc=1 					[NC,L]
+RewriteRule 		^LogIn/([0-9]+)/?$ 					/mingled/index.php?page=SignIn&acc=1&otp=$1 		[NC,L]
+RewriteRule 		^Product/([0-9]+)/?$ 					/mingled/index.php?page=Product&pdt=$1 				[NC,L]
+RewriteRule 		^Shop/([A-Za-z_]*)/?$ 				/mingled/index.php?page=Shop&cat=$1 					[NC,L]
+RewriteRule 		^Shop/([A-Za-z_]*)/([a-z_]*)/?$ 	/mingled/index.php?page=Shop&cat=$1&sort=$2 		[NC,L]
+RewriteRule 		^SignIn/([0-9]+)/?$ 					/mingled/index.php?page=SignIn&otp=$1 					[NC,L]
+
+RewriteRule 		^([A-Za-z_]*)/?$ 						/mingled/index.php?page=$1 									[NC,L]
+
+RewriteRule 		^images/(.*)$ 							images/$1 																[NC,L]
+
